@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spandan Karfa | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND BLOBS */
+.blob{
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:linear-gradient(45deg,#38bdf8,#6366f1);
+  filter:blur(120px);
+  opacity:0.3;
+  animation:move 12s infinite alternate;
+}
+.blob:nth-child(1){top:0;left:0;}
+.blob:nth-child(2){bottom:0;right:0;}
+
+@keyframes move{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(120px,120px);}
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover{color:#38bdf8;}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 10%;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+.hero span{color:#38bdf8;}
+
+/* NEW TEXT ANIMATION */
+.role-container{
+  overflow:hidden;
+  height:30px;
+  margin-top:10px;
+}
+
+.role{
+  color:#94a3b8;
+  font-size:1.3rem;
+  animation:slide 6s infinite;
+  white-space:nowrap;
+}
+
+@keyframes slide{
+  0%{transform:translateY(0);}
+  33%{transform:translateY(-30px);}
+  66%{transform:translateY(-60px);}
+  100%{transform:translateY(0);}
+}
+
+/* BUTTON */
+.btn{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#38bdf8,#6366f1);
+  cursor:pointer;
+  color:white;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  border-radius:20px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  margin:8px;
+  padding:8px 15px;
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  font-size:14px;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="blob"></div>
+<div class="blob"></div>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <h1>Hi, I'm <span>Spandan Karfa</span> 👋</h1>
+
+  <div class="role-container">
+    <div class="role">
+      AI Developer 🚀<br>
+      Machine Learning Enthusiast 🤖<br>
+      Problem Solver & Innovator 💡
+    </div>
+  </div>
+
+  <button class="btn" onclick="scrollToSection('projects')">View My Work</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <h2>About Me 👨‍💻</h2>
+  <div class="card">
+    I am an enthusiastic and curious Information Technology student at JIS College of Engineering (2023–2027), driven by a strong passion for Artificial Intelligence, Machine Learning, and innovative software development. 🚀<br><br>
+
+    I enjoy transforming ideas into real-world impactful solutions, especially in domains like AI-driven systems, automation, and data-driven decision making. My journey in tech is fueled by continuous learning, creativity, and a deep interest in solving complex problems. 💡<br><br>
+
+    With hands-on experience in building machine learning models, web applications, and participating in research and innovation programs, I aim to contribute meaningfully to the future of technology. 🌍
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <h2>Projects 🚀</h2>
+  <div class="grid">
+    <div class="card">🌾 Agroscribe - AI Crop Disease Detection System</div>
+    <div class="card">🤝 Hackmate - Hackathon Teammate Finder</div>
+    <div class="card">🩺 Diabetes Prediction (Machine Learning)</div>
+    <div class="card">🏠 House Price Prediction Model</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <h2>Skills ⚡</h2>
+  <div class="card skills">
+    <span>Python</span>
+    <span>Java</span>
+    <span>SQL</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Scikit-learn</span>
+    <span>Machine Learning</span>
+    <span>Data Structures & Algorithms</span>
+    <span>Streamlit</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Problem Solving</span>
+    
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="reveal">
+  <h2>Achievements 🏆</h2>
+  <div class="card">
+    🏆 JIS Innovation Award Recipient <br>
+    📜 Patent: Integrated Farming with Smart Technology <br>
+    🥈 2nd Position at JISTech 2023 <br>
+    📄 IEEE Research Publication <br>
+    ☁ AWS AI-ML Virtual Internship <br>
+    🎓 Java Certification (IIT Kharagpur - NPTEL)
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="reveal">
+  <h2>Education 🎓</h2>
+  <div class="card">
+    🎓 B.Tech in Information Technology (2023–2027)<br>
+    📍 JIS College of Engineering<br><br>
+
+    📘 Higher Secondary (91.2%) - WBCHSE<br>
+    📗 Madhyamik (76%) - WBBSE
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <h2>Contact 📬</h2>
+  <div class="card">
+    📧 karfaspandan@gmail.com<br>
+    🔗 <a href="https://www.linkedin.com/in/spandan-karfa-4723302ba" target="_blank">LinkedIn</a><br>
+    💻 <a href="https://github.com/Spandan-24" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Spandan Karfa 🚀
+</footer>
+
+<script>
+
+/* SCROLL REVEAL */
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    let top=el.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+      el.classList.add("active");
+    }
+  });
+});
+
+/* SMOOTH SCROLL */
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+</script>
+
+</body>
+</html>
